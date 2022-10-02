@@ -8,18 +8,19 @@
   repeat process again ^
   if swap not happened (means everything sorted) return sortedArray
 */
-const arr = [5, 7, 2, 8, 4, 3, 6, 9, 1, 0, 1, 2, 2];
 
 function bubbleSort(arr) {
-  let noSwap = true;
-  for (let j = 0; j < arr.length; j++) {
-    if (arr[j] > arr[j + 1]) {
-      swap(arr, j, j + 1);
-      noSwap = false;
+  for (let i = 0; i < arr.length; i++) {
+    let noSwap = true;
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1);
+        noSwap = false;
+      }
     }
+    if (noSwap) break;
   }
-  if (noSwap) return arr;
-  return bubbleSort(arr);
+  return arr;
 }
 
 function swap(arr, destinationIndex, startIndex) {
@@ -28,4 +29,4 @@ function swap(arr, destinationIndex, startIndex) {
   arr[startIndex] = temp;
 }
 
-console.log(bubbleSort(arr));
+module.exports = bubbleSort;

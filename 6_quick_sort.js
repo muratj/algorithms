@@ -6,7 +6,6 @@
     if greater store in right array
   repeat process for left and right arrays until length equal or less than 1
 */
-const arr = [5, 7, 2, 8, 4, 3, 6, 9, 1, 0, 1, 2, 2];
 
 function quickSort(arr) {
   if (arr.length <= 1) return arr;
@@ -42,4 +41,4 @@ function quickSort(arr) {
   return [...quickSort(lessValues), pivot, ...quickSort(greaterValues)];
 }
 
-console.log(quickSort(arr));
+module.exports = quickSort;

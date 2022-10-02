@@ -7,8 +7,6 @@
   so we have sorted left and right elements merge them again [7,8],[3,4] => [3,4,7,8]
 */
 
-const arr = [5, 7, 2, 8, 4, 3, 6, 9, 1, 0, 1, 2, 2];
-
 function mergeSort(arr) {
   const middle = Math.floor(arr.length / 2);
 
@@ -36,4 +34,4 @@ function merge(leftArray, rightArray) {
   return sortedArray;
 }
 
-console.log(mergeSort(arr));
+module.exports = mergeSort;
